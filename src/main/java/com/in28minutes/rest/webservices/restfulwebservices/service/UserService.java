@@ -36,4 +36,9 @@ public class UserService
         users.add(user);
         return user;
     }
+
+    public boolean delete(Integer id)
+    {
+        return users.removeIf(user -> user.getId().equals(id));
+    }
 }
