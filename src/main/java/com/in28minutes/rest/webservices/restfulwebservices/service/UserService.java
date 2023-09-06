@@ -3,12 +3,10 @@ package com.in28minutes.rest.webservices.restfulwebservices.service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 import com.in28minutes.rest.webservices.restfulwebservices.bean.User;
+import com.in28minutes.rest.webservices.restfulwebservices.exception.NotFoundException;
 
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,7 +27,7 @@ public class UserService
 
     public User findOne(int id)
     {
-        return users.stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null);
+        return users.stream().filter(user -> user.getId().equals(id)).findFirst().orElseThrow(() -> new NotFoundException("id:" + id));
     }
 
     public User save(User user)
