@@ -1,5 +1,7 @@
 package com.in28minutes.rest.webservices.restfulwebservices.controller;
 
+import jakarta.validation.Valid;
+
 import java.net.URI;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class UserController
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> save(@RequestBody User user)
+    public ResponseEntity<User> save(@Valid @RequestBody User user)
     {
         User savedUser = userService.save(user);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
