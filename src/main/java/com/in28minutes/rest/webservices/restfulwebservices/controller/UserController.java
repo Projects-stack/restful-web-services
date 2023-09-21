@@ -9,6 +9,8 @@ import com.in28minutes.rest.webservices.restfulwebservices.bean.User;
 import com.in28minutes.rest.webservices.restfulwebservices.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
 public class UserController
@@ -29,9 +33,15 @@ public class UserController
         return userService.findAll();
     }
 
+    // EntityModel
+    // WebMvcLinkBuilder
     @GetMapping("/users/{id}")
-    public User findOne(@PathVariable Integer id) {
-        return userService.findOne(id);
+    public EntityModel<User> findOne(@PathVariable Integer id) {
+        User user = userService.findOne(id);
+        EntityModel<User> userEntityModel = EntityModel.of(user);
+        WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).findAll());
+        userEntityModel.add(link.withRel("all-users"));
+        return userEntityModel;
     }
 
     @PostMapping("/users")
