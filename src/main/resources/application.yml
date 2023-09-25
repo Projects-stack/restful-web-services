@@ -1,14 +1,17 @@
+# logging
 logging:
   level:
     org:
       springframework: debug
 
+# actuator
 management:
   endpoints:
     web:
       exposure:
         include: "*"
 
+# h2-db
 spring:
   h2:
     console:
