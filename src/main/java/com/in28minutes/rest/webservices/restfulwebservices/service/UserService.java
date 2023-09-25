@@ -2,7 +2,7 @@ package com.in28minutes.rest.webservices.restfulwebservices.service;
 
 import java.util.List;
 
-import com.in28minutes.rest.webservices.restfulwebservices.bean.User;
+import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
 import com.in28minutes.rest.webservices.restfulwebservices.dao.UserDAO;
 import com.in28minutes.rest.webservices.restfulwebservices.exception.NotFoundException;
 

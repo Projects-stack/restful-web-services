@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.bean;
+package com.in28minutes.rest.webservices.restfulwebservices.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,8 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "user_details")

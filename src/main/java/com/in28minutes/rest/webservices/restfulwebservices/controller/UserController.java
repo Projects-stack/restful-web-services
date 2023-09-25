@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
-import com.in28minutes.rest.webservices.restfulwebservices.bean.User;
+import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
 import com.in28minutes.rest.webservices.restfulwebservices.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
