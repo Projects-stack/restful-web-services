@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.filtering.bean;
+package com.in28minutes.rest.webservices.restfulwebservices.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

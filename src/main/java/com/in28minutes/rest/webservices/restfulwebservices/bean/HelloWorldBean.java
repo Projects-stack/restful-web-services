@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.entity;
+package com.in28minutes.rest.webservices.restfulwebservices.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

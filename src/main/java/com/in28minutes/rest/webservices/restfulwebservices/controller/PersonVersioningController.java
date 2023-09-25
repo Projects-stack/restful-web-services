@@ -1,8 +1,8 @@
 package com.in28minutes.rest.webservices.restfulwebservices.controller;
 
-import com.in28minutes.rest.webservices.restfulwebservices.entity.Name;
-import com.in28minutes.rest.webservices.restfulwebservices.entity.person.PersonV1;
-import com.in28minutes.rest.webservices.restfulwebservices.entity.person.PersonV2;
+import com.in28minutes.rest.webservices.restfulwebservices.bean.Name;
+import com.in28minutes.rest.webservices.restfulwebservices.bean.person.PersonV1;
+import com.in28minutes.rest.webservices.restfulwebservices.bean.person.PersonV2;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

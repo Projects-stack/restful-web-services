@@ -2,7 +2,7 @@ package com.in28minutes.rest.webservices.restfulwebservices.controller;
 
 import java.util.Locale;
 
-import com.in28minutes.rest.webservices.restfulwebservices.entity.HelloWorldBean;
+import com.in28minutes.rest.webservices.restfulwebservices.bean.HelloWorldBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
