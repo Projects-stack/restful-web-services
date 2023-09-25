@@ -2,7 +2,7 @@ package com.in28minutes.rest.webservices.restfulwebservices.service.impl;
 
 import java.util.List;
 
-import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
+import com.in28minutes.rest.webservices.restfulwebservices.entity.UserEntity;
 import com.in28minutes.rest.webservices.restfulwebservices.dao.UserDAO;
 import com.in28minutes.rest.webservices.restfulwebservices.exception.NotFoundException;
 import com.in28minutes.rest.webservices.restfulwebservices.service.UserService;
@@ -18,20 +18,20 @@ public class UserServiceImpl implements UserService
     private UserDAO userDAO;
 
     @Override
-    public List<User> findAll() {
+    public List<UserEntity> findAll() {
         return userDAO.findAll();
     }
 
     @Override
-    public User findOne(int id)
+    public UserEntity findOne(int id)
     {
         return userDAO.findById(id).orElseThrow(() -> new NotFoundException("User with id:" + id + " is not present"));
     }
 
     @Override
-    public User save(User user)
+    public UserEntity save(UserEntity userEntity)
     {
-        return userDAO.save(user);
+        return userDAO.save(userEntity);
     }
 
     @Override

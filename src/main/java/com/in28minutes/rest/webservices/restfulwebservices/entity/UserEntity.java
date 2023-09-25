@@ -15,12 +15,12 @@ import lombok.ToString;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "user_details")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User
+public class UserEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

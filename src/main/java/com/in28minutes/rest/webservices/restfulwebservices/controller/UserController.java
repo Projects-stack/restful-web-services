@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
-import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
+import com.in28minutes.rest.webservices.restfulwebservices.entity.UserEntity;
 import com.in28minutes.rest.webservices.restfulwebservices.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,28 +30,28 @@ public class UserController
     private UserService userService;
 
     @GetMapping("/users")
-    public List<User> findAll() {
+    public List<UserEntity> findAll() {
         return userService.findAll();
     }
 
     // EntityModel
     // WebMvcLinkBuilder
     @GetMapping("/users/{id}")
-    public EntityModel<User> findOne(@PathVariable Integer id) {
-        User user = userService.findOne(id);
-        EntityModel<User> userEntityModel = EntityModel.of(user);
+    public EntityModel<UserEntity> findOne(@PathVariable Integer id) {
+        UserEntity userEntity = userService.findOne(id);
+        EntityModel<UserEntity> userEntityModel = EntityModel.of(userEntity);
         WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).findAll());
         userEntityModel.add(link.withRel("all-users"));
         return userEntityModel;
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> save(@Valid @RequestBody User user)
+    public ResponseEntity<UserEntity> save(@Valid @RequestBody UserEntity userEntity)
     {
-        User savedUser = userService.save(user);
+        UserEntity savedUserEntity = userService.save(userEntity);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(savedUser.getId())
+                .buildAndExpand(savedUserEntity.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
     }

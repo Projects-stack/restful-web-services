@@ -2,15 +2,15 @@ package com.in28minutes.rest.webservices.restfulwebservices.service;
 
 import java.util.List;
 
-import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
+import com.in28minutes.rest.webservices.restfulwebservices.entity.UserEntity;
 
 public interface UserService
 {
-    List<User> findAll();
+    List<UserEntity> findAll();
 
-    User findOne(int id);
+    UserEntity findOne(int id);
 
-    User save(User user);
+    UserEntity save(UserEntity userEntity);
 
     void delete(Integer id);
 
