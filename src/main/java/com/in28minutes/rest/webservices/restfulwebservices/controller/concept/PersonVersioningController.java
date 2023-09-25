@@ -1,4 +1,4 @@
-package com.in28minutes.rest.webservices.restfulwebservices.controller;
+package com.in28minutes.rest.webservices.restfulwebservices.controller.concept;
 
 import com.in28minutes.rest.webservices.restfulwebservices.bean.Name;
 import com.in28minutes.rest.webservices.restfulwebservices.bean.person.PersonV1;
