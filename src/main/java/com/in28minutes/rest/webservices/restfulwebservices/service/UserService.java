@@ -3,35 +3,15 @@ package com.in28minutes.rest.webservices.restfulwebservices.service;
 import java.util.List;
 
 import com.in28minutes.rest.webservices.restfulwebservices.entity.User;
-import com.in28minutes.rest.webservices.restfulwebservices.dao.UserDAO;
-import com.in28minutes.rest.webservices.restfulwebservices.exception.NotFoundException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
-public class UserService
+public interface UserService
 {
+    List<User> findAll();
 
-    @Autowired
-    private UserDAO userDAO;
+    User findOne(int id);
 
-    public List<User> findAll() {
-        return userDAO.findAll();
-    }
+    User save(User user);
 
-    public User findOne(int id)
-    {
-        return userDAO.findById(id).orElseThrow(() -> new NotFoundException("User with id:" + id + " is not present"));
-    }
+    void delete(Integer id);
 
-    public User save(User user)
-    {
-        return userDAO.save(user);
-    }
-
-    public void delete(Integer id)
-    {
-        userDAO.deleteById(id);
-    }
 }
