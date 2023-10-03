@@ -6,5 +6,9 @@ import com.in28minutes.rest.webservices.restfulwebservices.entity.PostEntity;
 
 public interface PostService
 {
-    List<PostEntity> findByUser(Integer userId);
+    List<PostEntity> findAllByUser(Integer userId);
+
+    PostEntity save(Integer userId, PostEntity postEntity);
+
+    PostEntity findOne(Integer id);
 }
