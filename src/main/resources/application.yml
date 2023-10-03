@@ -11,8 +11,12 @@ management:
       exposure:
         include: "*"
 
-# h2-db
+
 spring:
+  security:
+    user:
+      name: "sa"
+      password: "s3cr3t"
   h2:
     console:
       enabled: true
